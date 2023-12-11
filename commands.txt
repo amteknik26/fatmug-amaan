@@ -1,0 +1,11 @@
+# Start Django project
+django-admin startproject fatmug .
+
+# Setup virtual env
+virtualenv env
+
+#Collect static into static folder
+./manage.py collectstatic
+
+#Run Django 
+python ./manage.py runserver
