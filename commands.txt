@@ -2,6 +2,7 @@
 python -m venv .venv
 . .venv/Scripts/activate
 
+pip install django djangorestframework drf-yasg
 # Start Django project
 django-admin startproject fatmug .
 
@@ -17,3 +18,11 @@ python ./manage.py runserver
 
  #Create admin user
  python manage.py createsuperuser
+
+
+
+ python manage.py runserver_plus --cert-file cert.pem --key-file key.pem
+
+ Generate Token
+ python manage.py drf_create_token <username>
+ python manage.py drf_create_token amaan

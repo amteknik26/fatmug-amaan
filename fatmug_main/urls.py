@@ -27,7 +27,6 @@ from .views import (
 )
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
     path('api/vendors/', VendorListCreateView.as_view(), name='vendor-list-create'),
     path('api/vendors/<int:pk>/', VendorRetrieveUpdateDeleteView.as_view(), name='vendor-retrieve-update-delete'),
     path('api/purchase_orders/', PurchaseOrderListCreateView.as_view(), name='purchase-order-list-create'),

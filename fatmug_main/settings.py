@@ -41,11 +41,13 @@ DEFAULT_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
+    'drf_yasg'
 ]
 
 LOCAL_APPS = [
-    "fatmug_main"
+    "fatmug_main",
 ]
 
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
@@ -60,7 +62,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "fatmug_main.urls"
+ROOT_URLCONF = "urls"
 
 TEMPLATES = [
     {
@@ -111,9 +113,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.2/howto/static-files/
+#CUSTOM ##############################################################################################
 
 STATIC_URL = "/static/"
 STATIC_FILES_DIRs = os.path.join(BASE_DIR,'static')
@@ -122,10 +122,39 @@ STATIC_ROOT = os.path.join(BASE_DIR,'static')
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': False,
+    'api_version': '1.0',
+    'enabled_methods': ['get', 'post', 'put', 'patch', 'delete'],
+    'SECURITY_DEFINITIONS': {
+        'api_key': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+        },
+    },
+}
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+#HTTPS and SSL Settings
+
+# SECURE_SSL_REDIRECT = True
+
+# SESSION_COOKIE_SECURE = False #For local purposes
+# CSRF_COOKIE_SECURE = False #For local purposes
+
+# SECURE_HSTS_SECONDS = 31536000 
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_PRELOAD = True
+
 
 try:
     from fatmug_main.local_setting import *
