@@ -26,3 +26,9 @@ python ./manage.py runserver
  Generate Token
  python manage.py drf_create_token <username>
  python manage.py drf_create_token amaan
+
+ autopep8 --in-place --aggressive --aggressive models.py
+ isort fatmug_main/ fatmug_main/
+ pycodestyle --first optparse.py
+
+ pycodestyle --show-source --show-pep8 ser.py

@@ -113,14 +113,14 @@ USE_I18N = True
 
 USE_TZ = True
 
-#CUSTOM ##############################################################################################
+# CUSTOM #################################################################
 
 STATIC_URL = "/static/"
-STATIC_FILES_DIRs = os.path.join(BASE_DIR,'static')
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
+STATIC_FILES_DIRs = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = os.path.join(BASE_DIR,'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
@@ -144,14 +144,14 @@ SWAGGER_SETTINGS = {
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-#HTTPS and SSL Settings
+# HTTPS and SSL Settings
 
 # SECURE_SSL_REDIRECT = True
 
 # SESSION_COOKIE_SECURE = False #For local purposes
 # CSRF_COOKIE_SECURE = False #For local purposes
 
-# SECURE_HSTS_SECONDS = 31536000 
+# SECURE_HSTS_SECONDS = 31536000
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # SECURE_HSTS_PRELOAD = True
 

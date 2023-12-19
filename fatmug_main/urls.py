@@ -16,23 +16,35 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.urls import path
-from .views import (
-    AcknowledgePurchaseOrderView,
-    VendorListCreateView,
-    VendorRetrieveUpdateDeleteView,
-    PurchaseOrderListCreateView,
-    PurchaseOrderRetrieveUpdateDeleteView,
-    VendorPerformanceView,
-)
+
+from .views import (AcknowledgePurchaseOrderView, PurchaseOrderListCreateView,
+                    PurchaseOrderRetrieveUpdateDeleteView,
+                    VendorListCreateView, VendorPerformanceView,
+                    VendorRetrieveUpdateDeleteView)
 
 urlpatterns = [
-    path('api/vendors/', VendorListCreateView.as_view(), name='vendor-list-create'),
-    path('api/vendors/<int:pk>/', VendorRetrieveUpdateDeleteView.as_view(), name='vendor-retrieve-update-delete'),
-    path('api/purchase_orders/', PurchaseOrderListCreateView.as_view(), name='purchase-order-list-create'),
-    path('api/purchase_orders/<int:pk>/', PurchaseOrderRetrieveUpdateDeleteView.as_view(), name='purchase-order-retrieve-update-delete'),
-    path('api/vendors/<int:pk>/performance/', VendorPerformanceView.as_view(), name='vendor_performance'),
-    path('api/purchase_orders/<int:pk>/acknowledge/', AcknowledgePurchaseOrderView.as_view(), name='acknowledge-purchase-order'),
+    path(
+        'api/vendors/',
+        VendorListCreateView.as_view(),
+        name='vendor-list-create'),
+    path(
+        'api/vendors/<int:pk>/',
+        VendorRetrieveUpdateDeleteView.as_view(),
+        name='vendor-retrieve-update-delete'),
+    path(
+        'api/purchase_orders/',
+        PurchaseOrderListCreateView.as_view(),
+        name='purchase-order-list-create'),
+    path(
+        'api/purchase_orders/<int:pk>/',
+        PurchaseOrderRetrieveUpdateDeleteView.as_view(),
+        name='purchase-order-retrieve-update-delete'),
+    path(
+        'api/vendors/<int:pk>/performance/',
+        VendorPerformanceView.as_view(),
+        name='vendor_performance'),
+    path(
+        'api/purchase_orders/<int:pk>/acknowledge/',
+        AcknowledgePurchaseOrderView.as_view(),
+        name='acknowledge-purchase-order'),
 ]
-
-    
