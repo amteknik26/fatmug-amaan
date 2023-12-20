@@ -35,7 +35,7 @@ The typical flow would be like
 2. Create a PurchaseOrder for said vendor 
 3. Hit acknowledge endoint to acknowledge the PurchaseOrder
 4. Update the PurchaseOrder status to 'completed'
-5. Trigger metrics calculation
+5. Auto trigger metrics calculation
 
 &nbsp;
 ## Run test suite
