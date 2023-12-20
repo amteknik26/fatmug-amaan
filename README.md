@@ -1,9 +1,6 @@
 ## Fatmug Assignment - Amaan
 In this README file I will provide you with everything you need to evaluate my assignment.
 
-I will leave the database tables empty. Therefore you must create the equipments and manufacturers **YOURSELF** using the cURL I have provided below.
-
-
 *In case of any discrepancies please feel free to mail me at : amaan5800@gmail.com or DM me via LinkedIn*
 
 &nbsp;
