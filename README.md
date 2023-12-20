@@ -29,6 +29,15 @@ In this README file I will provide you with everything you need to evaluate my a
   python ./manage.py runserver
 ```
 &nbsp;
+## End User Flow
+The typical flow would be like
+1. Create Vendor
+2. Create a PurchaseOrder for said vendor 
+3. Hit acknowledge endoint to acknowledge the PurchaseOrder
+4. Update the PurchaseOrder status to 'completed'
+5. Trigger metrics calculation
+
+&nbsp;
 ## Run test suite
 Tests are located inside 'tests' directory of 'fatmug_main' app. When inside the project you can run the below
 command to execute all the test cases for views, urls and models.
