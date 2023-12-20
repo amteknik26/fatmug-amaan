@@ -29,6 +29,14 @@ In this README file I will provide you with everything you need to evaluate my a
   python ./manage.py runserver
 ```
 &nbsp;
+## Run test suite
+Tests are located inside 'tests' directory of 'fatmug_main' app. When inside the project you can run the below
+command to execute all the test cases for views, urls and models.
+```bash
+  python manage.py test fatmug_main.tests.test_urls fatmug_main.tests.test_models fatmug_main.tests.test_views
+```
+
+&nbsp;
 ## API Documentation
 The views have been extensively documented using 'docstrings. Additionally I have used swagger to document the APIs.
 Once the server is up and running, You can visit http://127.0.0.1:8000/swagger/ to check out the documentaion
