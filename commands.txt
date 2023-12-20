@@ -35,3 +35,5 @@ python ./manage.py runserver
 
 
  python manage.py test fatmug_main.tests.test_urls
+
+
