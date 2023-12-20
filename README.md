@@ -35,7 +35,7 @@ command to execute all the test cases for views, urls and models.
 ```bash
   python manage.py test fatmug_main.tests.test_urls fatmug_main.tests.test_models fatmug_main.tests.test_views
 ```
-
+There are 15 test cases which must return OK
 &nbsp;
 ## API Documentation
 The views have been extensively documented using 'docstrings. Additionally I have used swagger to document the APIs.
