@@ -14,20 +14,6 @@ def update_vendor_quality_rating_avg(sender, instance, **kwargs):
             instance.vendor.update_quality_rating_avg(instance.quality_rating)
 
 
-# @receiver(post_save, sender=PurchaseOrder)
-# def update_on_time_delivery_rate(sender, instance, created, **kwargs):
-#     if instance.status == 'completed':
-#         with transaction.atomic():
-#             instance.vendor.update_on_time_delivery_rate(instance)
-#         # 'created' will be True if a new PurchaseOrder is created
-#         # Perform your logic using the specific PurchaseOrder instance here
-
-
-# In this example, the created argument will be True only if a new PurchaseOrder is created.
-# The instance argument holds the specific PurchaseOrder object that triggered the signal.
-# You can use this instance in your calculate_metrics function or any
-# other logic you want to perform.
-
 @receiver(post_save, sender=PurchaseOrder)
 def update_average_response_time(sender, instance, **kwargs):
     if instance.acknowledgment_date is not None:

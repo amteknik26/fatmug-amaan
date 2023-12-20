@@ -1,4 +1,5 @@
 from django.core.exceptions import ValidationError
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 from django.db.models import JSONField
 
@@ -14,11 +15,18 @@ class Vendor(models.Model):
         db_comment="Preferably an email address",)
     address = models.TextField(max_length=100)
     vendor_code = models.CharField(max_length=50, unique=True)
-    on_time_delivery_rate = models.FloatField(null=True, default=None)
-    quality_rating_avg = models.FloatField(null=True, default=None)
+    on_time_delivery_rate = models.FloatField(
+        null=True, default=None, validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
+    quality_rating_avg = models.FloatField(
+        null=True, default=None, validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
     average_response_time = models.FloatField(
-        null=True, default=None, db_comment="in Minutes")
-    fulfillment_rate = models.FloatField(null=True, default=None)
+        null=True, default=None, validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
+    fulfillment_rate = models.FloatField(
+        null=True, default=None, validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
 
     def update_on_time_delivery_rate(self, order_instance):
         on_time_delivery_rate = calculate_on_time_delivery_rate(

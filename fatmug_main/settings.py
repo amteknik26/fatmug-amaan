@@ -115,6 +115,9 @@ USE_TZ = True
 
 # CUSTOM #################################################################
 
+#Suppress unneccesary warning
+SILENCED_SYSTEM_CHECKS = ["2_0.W001", "fields.W163"]
+
 STATIC_URL = "/static/"
 STATIC_FILES_DIRs = os.path.join(BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
