@@ -47,6 +47,7 @@ command to execute all the test cases for views, urls and models.
 There are 15 test cases which must return OK
 
 &nbsp;
+&nbsp;
 ## API Documentation
 The views have been extensively documented using 'docstrings. Additionally I have used swagger to document the APIs.
 Once the server is up and running, You can visit http://127.0.0.1:8000/swagger/ to check out the documentaion
