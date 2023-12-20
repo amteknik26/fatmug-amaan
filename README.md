@@ -21,8 +21,8 @@ In this README file I will provide you with everything you need to evaluate my a
 ```
 5. Run migrations using the below two commands
 ```bash
-    python manage.py migrate fatmug_main
-    python manage.py makemigrations
+    python manage.py makemigrations fatmug_main
+    python manage.py migrate 
 ```
 6. Start the server using 
 ```bash
