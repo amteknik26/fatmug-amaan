@@ -32,3 +32,6 @@ python ./manage.py runserver
  pycodestyle --first optparse.py
 
  pycodestyle --show-source --show-pep8 ser.py
+
+
+ python manage.py test fatmug_main.tests.test_urls

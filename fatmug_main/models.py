@@ -1,8 +1,6 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.db.models import JSONField
-from django.dispatch import Signal
-from django.utils import timezone
 
 from .utils.metrics_calculator import (calculate_average_response_time,
                                        calculate_fulfillment_rate,

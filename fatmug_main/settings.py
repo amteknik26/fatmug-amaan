@@ -144,18 +144,6 @@ SWAGGER_SETTINGS = {
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# HTTPS and SSL Settings
-
-# SECURE_SSL_REDIRECT = True
-
-# SESSION_COOKIE_SECURE = False #For local purposes
-# CSRF_COOKIE_SECURE = False #For local purposes
-
-# SECURE_HSTS_SECONDS = 31536000
-# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-# SECURE_HSTS_PRELOAD = True
-
-
 try:
     from fatmug_main.local_setting import *
 except ImportError:

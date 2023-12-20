@@ -26,20 +26,6 @@ def calculate_on_time_delivery_rate(vendor, order_instance) -> float:
             on_time_delivery_rate = round(
                 ((on_time_deliveries) / total_completed_orders) * 100, 2)
             return on_time_delivery_rate
-
-        # if vendor.on_time_delivery_rate == None:
-        #     return round((1/total_completed_orders)*100)
-
-        # on_time_deliveries = round((vendor.on_time_delivery_rate/100) * total_completed_orders)
-
-        # if order_instance.delivery_date.date() <= timezone.now().date():
-        #     on_time_delivery_rate = round(((on_time_deliveries + 1) / total_completed_orders)*100)
-        #     return on_time_delivery_rate
-        # else:
-        #     if on_time_deliveries == 0:
-        #         return 0
-        #     on_time_delivery_rate = round((on_time_deliveries / total_completed_orders)*100)
-        #     return on_time_delivery_rate
     except Exception as e:
         logging.info(
             f"An exception occured when calculating on time delivery rate : {e}")
